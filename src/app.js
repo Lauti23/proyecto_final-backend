@@ -6,11 +6,11 @@ const server = app.listen(PORT, () => {
 })
 const productsRouter = require('./router/productsRouter')
 const cartRouter = require('./router/cartRouter')
-
-app.use('/api/products', productsRouter)
-app.use('/api/cart', cartRouter)
 app.use(express.json()); 
 app.use(express.urlencoded({extended:true})) 
+app.use('/api/products', productsRouter)
+app.use('/api/cart', cartRouter)
+
 app.use((req, res) => {
     res
         .status(400)

@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": 1,
+    "timestamp": "8/12/2022, 1:16:27 p. m.",
+    "name": "Queso",
+    "description": "Queso roquefort",
+    "code": 22,
+    "url": "Queso.com.ar",
+    "price": 5000,
+    "stock": 50
+  }
+]
