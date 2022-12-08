@@ -1,12 +1,22 @@
 [
   {
     "id": 1,
-    "timestamp": "8/12/2022, 1:16:27 p. m.",
+    "timestamp": "8/12/2022, 1:58:29 p. m.",
+    "name": "Salamin",
+    "description": "Muy rico",
+    "code": 3,
+    "url": "salamin.com.ar",
+    "price": 100,
+    "stock": 2000
+  },
+  {
+    "id": 2,
+    "timestamp": "8/12/2022, 1:58:43 p. m.",
     "name": "Queso",
-    "description": "Queso roquefort",
-    "code": 22,
-    "url": "Queso.com.ar",
-    "price": 5000,
-    "stock": 50
+    "description": "Muy rico",
+    "code": 2,
+    "url": "queso.com.ar",
+    "price": 100,
+    "stock": 2000
   }
 ]

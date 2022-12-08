@@ -3,9 +3,9 @@ const pathToFile = './src/data/products.json'
 
 class ProductsManager {
     getAll = async () => {
-        if (!fs.existsSync(productFile)) return {error: 0, message: 'No existe en la base de datos'}
-        if (fs.existsSync(productFile)) {
-            let data = await fs.promises.readFile(productFile, 'utf-8')
+        if (!fs.existsSync(pathToFile)) return {error: 0, message: 'No existe en la base de datos'}
+        if (fs.existsSync(pathToFile)) {
+            let data = await fs.promises.readFile(pathToFile, 'utf-8')
             let products = JSON.parse(data)
             return {status: 'Success', message: products}
         } else {
@@ -37,7 +37,7 @@ class ProductsManager {
                     ...product
                 }
                 products.push(product)
-                await fs.promises.writeFile(pathToFile, JSON.stringify([product], null, 2))
+                await fs.promises.writeFile(pathToFile, JSON.stringify(products, null, 2))
             } else {
                 product = {
                     id,
@@ -48,14 +48,14 @@ class ProductsManager {
             }
             return product          
         } catch (err) {
-            return {error: 0, descripicion: "Error al acceder a la BD"}
+            return {error: 0, descripicion: err.message}
         }
     }
 
     update = async (id, updatedProduct) => {
         id = parseInt(id)
         if(fs.existsSync(pathToFile)) {
-            isFound = false
+            let isFound = false
             let data = await fs.promises.readFile(pathToFile, 'utf-8')
             let products = JSON.parse(data)
             let newProducts = products.map(item => {
