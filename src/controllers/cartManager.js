@@ -15,7 +15,7 @@ class CartsManager {
                     ...cart
                 }
                 carts.push(cart)
-                await fs.promises.writeFile(pathToFile, JSON.stringify([cart], null, 2))
+                await fs.promises.writeFile(pathToFile, JSON.stringify(carts, null, 2))
             } else {
                 cart = {
                     id,
